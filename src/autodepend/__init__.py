@@ -22,6 +22,6 @@
 # SOFTWARE.                                                                      #
 # ============================================================================== #
 
-from .autodpd import VersionDetector
+from .autodpd import autodpd
 
 __version__ = "0.1.0"

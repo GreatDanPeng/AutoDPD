@@ -1,0 +1,10 @@
+name: ''
+channels:
+- defaults
+- conda-forge
+dependencies:
+- python>=3.6
+- pip
+- pip:
+  - packaging==24.2
+  - requests==2.32.3

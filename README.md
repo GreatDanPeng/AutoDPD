@@ -33,12 +33,12 @@ autodpd
 
 Analyze specific directory:
 ```bash
-autodpd --d /path/to/your/project
+autodpd -d /path/to/your/project
 ```
 
 Check the current version of autodpd:
 ```bash
-autodpd --v
+autodpd -v
 ```
 
 Include recommended version of dependencies:
@@ -48,7 +48,7 @@ autodpd --versions
 
 Generate with a quiet output:
 ```bash
-autodpd --q
+autodpd -q
 ```
 
 Skip saving output files:

@@ -1,6 +1,6 @@
-# AutoDepenD (Automatic Dependency Detector)
+# AutoDPD (Automatic Dependency Detector)
 
-AutoDepenD is a Python tool that automatically analyzes Python projects to detect dependencies, determine required Python versions, and generate environment package list.
+AutoDPD is a Python tool that automatically analyzes Python projects to detect dependencies, determine required Python versions, and generate environment package list.
 
 ## Features
 
@@ -17,8 +17,7 @@ AutoDepenD is a Python tool that automatically analyzes Python projects to detec
 ## Installation
 
 ```bash
-pip install pyyaml
-pip install requests
+pip install pyyaml requests packaging
 pip install autodpd
 ```
 
@@ -34,9 +33,14 @@ Analyze specific directory:
 autodpd --d /path/to/your/project
 ```
 
-Include package versions:
+Check the current version of autodpd:
 ```bash
 autodpd --v
+```
+
+Include recommended version of dependencies:
+```bash
+autodpd --versions
 ```
 
 Generate with a quiet output:
@@ -44,10 +48,9 @@ Generate with a quiet output:
 autodpd --q
 ```
 
-Specify output file:
+Skip saving output files:
 ```bash
-autodpd --output YOUR_requirements.txt
-autodpd --conda --output YOUR_environment.yml
+autodpd --no-save 
 ```
 
 Follow steps below to creat the conda enviornment with suggested packages:

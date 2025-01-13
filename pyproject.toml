@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "autodepend"
-version = "0.1.1"
+version = "0.1.2"
 authors = [
   { name="Dan Peng", email="dan.peng.1202@gmail.com" },
 ]
@@ -23,7 +23,7 @@ dependencies = [
 ]
 
 [project.scripts]
-autodepend = "autodepend.__main__:main"
+autodepend = "autodepend.autodpd:main"
 
 [project.urls]
 "Homepage" = "https://github.com/greatdanpeng/autodepend"

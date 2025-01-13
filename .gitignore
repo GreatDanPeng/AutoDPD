@@ -2,3 +2,4 @@ tests
 src/autodpd.egg-info
 build_install.sh
 .pypirc
+dist

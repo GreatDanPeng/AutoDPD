@@ -11,6 +11,7 @@ import requests
 import yaml
 from time import sleep
 from packaging.utils import canonicalize_name
+from autodpd.version import __version__
 
 class autodpd:
     def __init__(self):
@@ -764,7 +765,14 @@ def main():
         help='Suppress detailed output'
     )
     parser.add_argument(
-        '-v', '--versions',
+        '-v', '--version',
+        action='version',
+        version=f'%(prog)s {__version__}',
+        help='Show program version'
+    )
+    
+    parser.add_argument(
+        '--versions',
         action='store_true',
         help='Include package version numbers in requirements'
     )

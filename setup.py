@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="autodepend",
-    version="0.1.3",
+    name="autodpd",
+    version="0.2.0",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     install_requires=[
@@ -12,7 +12,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "autodpd=autodepend.cli:main",
+            "autodpd=autodpd.autodpd:main",
         ],
     },
     author="Dan Peng",

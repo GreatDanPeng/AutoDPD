@@ -1,6 +1,5 @@
 # AutoDPD (Automatic Dependency Detector)
 
-[![PyPI version](https://badge.fury.io/py/autodpd.svg)](https://badge.fury.io/py/autodpd)
 [![PyPI](https://img.shields.io/pypi/v/autodpd.svg)](https://pypi.org/project/autodpd/)
 
 AutoDPD is a Python tool that automatically analyzes Python projects to detect dependencies, determine required Python versions, and generate environment package list.

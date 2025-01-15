@@ -23,47 +23,48 @@ pip install pyyaml requests packaging
 pip install autodpd
 ```
 
-## Usage
-
-Generate Dependencies:
+## Tutorials
+### Generate Dependencies:
 ```bash
 autodpd
 ```
-
-Analyze specific directory:
-```bash
-autodpd -d /path/to/your/project
+**environment.yml:**
+```yaml
+name: project_name
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python>=3.6
+  - pip
+  - pip:
+    - matplotlib
+    - numpy
+    - pandas
+    - scikit-learn
+    - tensorflow
 ```
 
-Check the current version of autodpd:
-```bash
-autodpd -v
+**requirements.txt:**
 ```
-
-Include recommended version of dependencies:
-```bash
-autodpd --versions
+# Python >= 3.6
+matplotlib
+numpy
+pandas
+scikit-learn
+tensorflow
 ```
-
-Generate with a quiet output:
-```bash
-autodpd -q
-```
-
-Skip saving output files:
-```bash
-autodpd --no-save 
-```
-
-Follow steps below to creat the conda enviornment with suggested packages:
+### Follow steps below to creat the conda enviornment with suggested packages:
 ```bash
 conda env create -f environment.yml
 conda activate PROJECT_NAME
 pip install -r requirements.txt
 ```
-
-### Generated Files & Tutorials
-
+----------
+### Check the current version of autodpd:
+```bash
+autodpd -v
+```
 **environment.yml:**
 ```yaml
 name: project_name
@@ -91,6 +92,24 @@ scikit-learn==0.24.2
 tensorflow==2.6.0
 ```
 
+### Analyze specific directory:
+```bash
+autodpd -d /path/to/your/project
+```
+### Include recommended version of dependencies:
+```bash
+autodpd --versions
+```
+
+### Generate with a quiet output:
+```bash
+autodpd -q
+```
+
+### Skip saving output files:
+```bash
+autodpd --no-save 
+```
 ### (Optional) Python API
 
 ```python

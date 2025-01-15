@@ -272,7 +272,11 @@ class autodpd:
             # Cloud Services
             'boto3': 'boto3',
             'azure': 'azure-storage-blob',
-            'gcp': 'google-cloud-storage'
+            'gcp': 'google-cloud-storage',
+            
+            # Compression and Data Processing
+            'blosc': 'blosc',
+            'blosc2': 'blosc2'
         }
 
         # Get all Python files and notebooks recursively
@@ -683,51 +687,6 @@ class autodpd:
                 reasoning.append(msg)
         
         return reasoning
-
-    def display_environment_report(self, env_specs: Dict[str, any]) -> None:
-        """
-        Display a formatted report of the environment analysis
-        """
-        # Python Version and Reasoning
-        print(f"\nRecommended Python version: {env_specs['recommended_python_version']}")
-        if env_specs['python_version_reasoning']:
-            print("\nReasoning:")
-            for reason in env_specs['python_version_reasoning']:
-                print(f"  - {reason}")
-        
-        # Dependencies
-        print("\nThird-party dependencies:")
-        for dep in env_specs['dependencies']['third_party']:
-            print(f"  - {dep}")
-        
-        print("\nStandard library imports:")
-        for dep in env_specs['dependencies']['standard_lib']:
-            print(f"  - {dep}")
-        
-        if env_specs['dependencies']['unknown']:
-            print("\nUnknown/Uninstalled imports:")
-            for dep in env_specs['dependencies']['unknown']:
-                print(f"  - {dep}")
-        
-        # Conda Environment
-        print("\nSample conda environment.yml:")
-        print("name:", env_specs['conda_environment_yaml']['name'])
-        print("channels:")
-        for channel in env_specs['conda_environment_yaml']['channels']:
-            print(f"  - {channel}")
-        print("dependencies:")
-        for dep in env_specs['conda_environment_yaml']['dependencies']:
-            if isinstance(dep, dict):
-                print("  - pip:")
-                for pip_dep in dep['pip']:
-                    print(f"    - {pip_dep}")
-            else:
-                print(f"  - {dep}")
-        
-        # Base Requirements Info
-        print("\nBase requirements have been saved to base_requirements.txt")
-        print("These represent the minimum compatible versions of each package.")
-        print("Note: It's recommended to test your code with these versions before deployment.")
 
     def save_conda_environment(self, env_specs: Dict[str, any], output_file: str = 'environment.yml') -> None:
         """

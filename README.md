@@ -24,9 +24,13 @@ pip install autodpd
 ```
 
 ## Tutorials
-### Generate Dependencies:
+### Basic Usage
 ```bash
-autodpd
+cd /path/to/your/project
+autodpd # Generate Dependencies
+conda env create -f environment.yml # default name: the name of current dir e.g. "project"; you can personalize your own conda env name after "name:" 
+conda activate PROJECT_NAME # Enter the name in environment.yml
+pip install -r requirements.txt # Ensure you installed all dependencies
 ```
 **environment.yml:**
 ```yaml
@@ -53,12 +57,6 @@ numpy
 pandas
 scikit-learn
 tensorflow
-```
-### Follow steps below to creat the conda enviornment with suggested packages:
-```bash
-conda env create -f environment.yml
-conda activate PROJECT_NAME
-pip install -r requirements.txt
 ```
 ----------
 ### Check the current version of autodpd:
